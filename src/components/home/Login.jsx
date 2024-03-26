@@ -127,7 +127,7 @@ export const Login = () => {
               <img src={rememberMeImage} alt="1" onClick={selectRememberMe} /> Remember me
             </div>
             <div className="loginBtnContainer">
-              <button onClick={handleSubmit}>Login</button>
+              <button onClick={handleSubmit} className='loginBtn'>Login</button>
             </div>
           </div>
         </div>
