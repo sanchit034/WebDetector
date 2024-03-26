@@ -8,8 +8,7 @@ export const Home = () => {
  
   return (
     <div className='home'>
-      <div><Navbar/></div>
-      <div>
+      <div className='outlet-container'>
         <Outlet/>
       </div>
     </div>
