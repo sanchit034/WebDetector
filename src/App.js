@@ -24,7 +24,7 @@ function App() {
               <Route path="register" element={<Register />} />
             </Route>
             <Route path="about" element={<About/>}/>
-            <Route path="/lobby" element={<Lobby />}>
+            <Route path="/lobby/" element={<Lobby />}>
               <Route index element={<Dashboard/>} />
               <Route path="leaderboard" element={<Leaderboard />} />
               <Route path="team" element={<Team />} />
