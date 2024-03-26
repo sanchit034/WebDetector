@@ -1,15 +1,13 @@
 .sidebar{
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    left: 3%;
-    top: 32%;
-    height: 50%;
-    width: 5%;
+    height: 60%;
+    width: 80px;
     border-radius: 30px;
-    background-color:#55B9D6;
+    margin: auto;
+    background-color: rgba($color: #5f6faa, $alpha: 0.4);
 }
 
 .images{
