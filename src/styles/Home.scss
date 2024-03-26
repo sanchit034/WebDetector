@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 .home {
     .loginPage {
         width: 100%;
@@ -7,19 +9,65 @@
             width: 100%;
             height: 100%;
             border-radius: 60px;
+            border: 5px solid rgba($color: #000000, $alpha: 0.2);
             background-color: rgba($color: #d4d4d4, $alpha: 0.2);
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-family: "Nunito Sans", sans-serif;
 
             .loginImgContainer {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 20px;
+                padding-left: 30px;
             }
     
             .loginContent {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-around;
+                padding: 20px;
+                padding-right: 60px;
+
+                .loginHeadingContainer {
+                    font-weight: bolder;
+                    font-size: 36px;
+                }
+
+                .loginSubHeadingContainer {
+                    font-weight: bold;
+                    font-size: 12;
+                }
+                
+                .loginFormContainer {
+                    display: flex;
+                    flex-direction: column;
+                
+                    .formItem {
+                        width: 100%;
+                        justify-content: left;
+                        text-align: left;
+                    }
+                    
+                    input {
+                        width: 100%;
+                        height: 30px; 
+                        display: block;
+                        background-color: transparent;
+                        border-radius: 8px;
+                        border: 2px solid rgba($color: #e0e0e0, $alpha: 1); 
+                        color: white; 
+                        font-size: 14px;
+                    }
+                }
+
+                .rememberMeContainer {
+                    height: 20px;
+                    font-size: 12px;
+                    text-align: left;
+                }
             }
         }
     }

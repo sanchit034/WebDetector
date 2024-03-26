@@ -1,9 +1,29 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
+import { toast } from 'react-hot-toast';
 import "../../styles/Home.scss";
 
 export const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMeImage, setRememberMeImage] = useState("assets/login/checkIcon.svg");
+  const [savedEmailId, setSavedEmailId] = useState();
+  const [savedPassword, setSavedPassword] = useState();
+
+  const selectRememberMe = () => {
+    if(rememberMe) {
+      setRememberMe(false);
+      setRememberMeImage("assets/login/checkIconSelected.svg");
+    } else {
+      setRememberMe(true);
+      setRememberMeImage("assets/login/checkIcon.svg");
+    }
+  }
+
+  const checkSavedDetails = () => {
+    
+  }
+  checkSavedDetails();
   
   return (
     <div className='loginPage'>
@@ -15,26 +35,26 @@ export const Login = () => {
           </div>
           <div className="loginContent">
             <div className="loginHeadingContainer">
-              <h3>Login to your Account</h3>
+              <p>Login to your Account</p>
             </div>
             <div className="loginSubHeadingContainer">
-              <h4>Sign in</h4>
+              <p>------------- Sign in -------------</p>
             </div>
             <div className="loginFormContainer">
               <div className="loginFormItem">
                 <label htmlFor="email" className='formItem'>Email Id</label>
-                <input type="email"  className="formItem" id="email" ref={emailRef} placeholder=" Enter your email address"/>
+                <input type="email"  className="formItem" id="email" ref={emailRef} defaultValue={savedEmailId} placeholder=" Enter your email address"/>
               </div>
               <div className="loginFormItem">
               <label htmlFor="password" className="formItem">Password</label>
-              <input type="password" className="formItem" id="password" ref={passwordRef} placeholder=" Enter your password" />
+              <input type="password" className="formItem" id="password" ref={passwordRef} defaultValue={savedPassword} placeholder=" Enter your password" />
               </div>
             </div>
             <div className="rememberMeContainer">
-              <p>Remember me</p>
+              <img src={rememberMeImage} alt="1" onClick={selectRememberMe} /> Remember me
             </div>
             <div className="loginBtnContainer">
-              <button>Login Button</button>
+              <button>Login</button>
             </div>
           </div>
         </div>
