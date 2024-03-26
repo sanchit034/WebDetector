@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Navbar.scss'
 
-export const Navbar = () => {
+export const Sidebar = () => {
   return (
     <div className="sidebar">
       <a href="/lobby/profile"><img src="/assets/Img9.png" alt="Profile" className="images" /></a>
