@@ -139,7 +139,7 @@ export const Landing = ()=> {
       <motion.img
         src="assets/Img3.png"
         alt="Navbar"
-        style={{ width: '100%', height: '10%', top: '5%', position: 'absolute', opacity: 0 }}
+        style={{ width: '100%', height: '15%', position: 'absolute', opacity: 0 }}
         animate={symbolAnimation}
       />
       <motion.img

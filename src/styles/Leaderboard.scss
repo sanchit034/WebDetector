@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+.leaderboard-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.leaderboard-img{
+    height: 35%;
+    width: 35%;
+}
+
+.leaderboard{
+    position: absolute;
+    left:20%;
+    top:20%;
+    height: 50%;
+    width: 40%;
+    background-color: #37778C;
+}
