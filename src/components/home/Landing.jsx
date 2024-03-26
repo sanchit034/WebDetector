@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useNavigate } from 'react-router-dom'; 
+import { Login } from './Login';
+import "../../styles/Home.scss";
 
 export const Landing = ()=> {
   const navigate = useNavigate();
   const containerAnimation = useAnimation();
+  const loginPageAnimation = useAnimation();
+  const aboutPageAnimation = useAnimation();
   const initialAnimation = useAnimation();
   const symbolAnimation = useAnimation();
   const textAnimation = useAnimation();
@@ -12,6 +16,7 @@ export const Landing = ()=> {
   const gmailAnimation = useAnimation();
   const loginAnimation = useAnimation();
   const aboutAnimation = useAnimation();
+  const loginContentContainerAnimation = useAnimation();
 
   function loginStatus() {
     if(localStorage.getItem('userId') ?? "" !== "") {
@@ -26,13 +31,13 @@ export const Landing = ()=> {
       // Animation sequence
       await Promise.all([
         containerAnimation.start({width:'100%', height:'100%'}),
-        initialAnimation.start({width:'100%', height:'100%'})
+        initialAnimation.start({aspectRatio:'1.7', height:'100%'})
       ]);
 
       await Promise.all([
         containerAnimation.start({opacity:0.8}, {duration: 1.5}),
         symbolAnimation.start({opacity:1}, {duration: 1.5}),
-        initialAnimation.start({width:'50%', height:'50%'}, {duration: 1.5}),
+        initialAnimation.start({aspectRatio:'1.7', height:'50%'}, {duration: 1.5}),
         textAnimation.start({bottom:'45%', opacity:1}, {duration: 1.5})
       ]);
 
@@ -63,6 +68,47 @@ export const Landing = ()=> {
     navigate,
   ]);
 
+  
+  const handleLoginClick = async () => {
+    await Promise.all([
+      //loginPageAnimation.start({left:'100%', opacity:1}, {duration: 0.001}),
+      loginContentContainerAnimation.start({left:'100%', opacity:1}, {duration:0.001})
+    ])
+    await Promise.all([
+      //containerAnimation.start({left:'-100%', opacity:1}, {duration: 0.5}),
+      //loginPageAnimation.start({left:'0%', opacity:1}, {duration: 0.5}),
+      initialAnimation.start({left:'-80%', opacity:1}, {duration: 0.5}),
+      textAnimation.start({left:'-80%', opacity:1}, {duration: 0.5}),
+      instaAnimation.start({left:'-100%', opacity:1}, {duration: 0.5}),
+      gmailAnimation.start({left:'-100%', opacity:1}, {duration: 0.5}),
+      loginAnimation.start({left:'-100%', opacity:1}, {duration: 0.5}),
+      aboutAnimation.start({left:'-18%', opacity:1}, {duration: 0.5}),
+      loginContentContainerAnimation.start({left:'10%', opacity:1}, {duration: 0.5})
+    ]);
+  };
+
+  const handleAboutClick = async () => {
+    await Promise.all([
+      containerAnimation.start({left:'100%', opacity:1}, {duration: 0.5}),
+      aboutPageAnimation.start({left:'0%', opacity:1}, {duration: 0.5}),
+      initialAnimation.start({left:'120%', opacity:1}, {duration: 0.5}),
+      textAnimation.start({left:'120%', opacity:1}, {duration: 0.5}),
+      instaAnimation.start({left:'101%', opacity:1}, {duration: 0.5}),
+      gmailAnimation.start({left:'101%', opacity:1}, {duration: 0.5}),
+      loginAnimation.start({left:'104%', opacity:1}, {duration: 0.5}),
+      aboutAnimation.start({left:'181%', opacity:1}, {duration: 0.5})
+    ]);
+    await Promise.all([
+      containerAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
+      initialAnimation.start({left:'-80%', opacity:1}, {duration: 0.001}),
+      textAnimation.start({left:'-80%', opacity:1}, {duration: 0.001}),
+      instaAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
+      gmailAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
+      loginAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
+      aboutAnimation.start({left:'-18%', opacity:1}, {duration: 0.001})
+    ]);
+  };
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <motion.img
@@ -72,9 +118,22 @@ export const Landing = ()=> {
         animate={containerAnimation}
       />
       <motion.img
+        src="assets/Img1.png"
+        alt="Background"
+        style={{ width: '100%', height: '100%', left: '-100%', position: 'absolute', opacity: 0 }}
+        animate={aboutPageAnimation}
+      />
+      <motion.img
+        src="assets/Img1.png"
+        alt="Background"
+        style={{ width: '100%', height: '100%', left: '-100%', position: 'absolute', opacity: 0 }}
+        animate={loginPageAnimation}
+      />
+      {/*Landing Page Items */}
+      <motion.img
         src="assets/Img2.png"
         alt="Initial"
-        style={{ width: '100%', height: '100%',bottom: '0%', position: 'absolute' }}
+        style={{ aspectRatio:'1.7', height: '100%',bottom: '0%', position: 'absolute' }}
         animate={initialAnimation}
       />
       <motion.img
@@ -105,22 +164,26 @@ export const Landing = ()=> {
         animate={gmailAnimation}
       />
       </a>
-      <a href="/login">
+      <button onClick={handleLoginClick}>
       <motion.img
         src="assets/Img7.png"
         alt="Login Text"
         style={{ width: '17.5%', height: '10%', left:'4%', bottom:'5%', position: 'absolute', opacity: 0 }}
         animate={loginAnimation}
       />
-      </a>
-      <a href="/about">
+      </button>
+      <button onClick={handleAboutClick}>
       <motion.img
         src="assets/Img8.png"
         alt="About Text"
         style={{ width: '15%', height: '8%', right:'4%', bottom:'6%', position: 'absolute', opacity: 0 }}
         animate={aboutAnimation}
       />
-      </a>
+      </button>
+      {/*Login Page Items */}
+      <motion.div style={{width:'80%', height:'70%', left:'-100%', top:'20%', position:'absolute',opacity: 0}} animate={loginContentContainerAnimation}>
+        <Login/>
+      </motion.div>
     </div>
   );
 };    
