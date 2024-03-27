@@ -28,11 +28,11 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
-                padding: 8%;
-                padding-right: 10%;
+                padding: 10%;
+                padding-right: 12%;
 
                 .loginBtn{
-                    margin-top: 2%;
+                    margin-top: 5%;
                     height: 35px;
                     width: 100%;
                     color: white;
@@ -40,13 +40,14 @@
                 }
 
                 .loginHeadingContainer {
+                    margin-bottom: 5%;
                     font-weight: bolder;
-                    font-size: 36px;
+                    font-size: 3rem;
                 }
 
                 .loginSubHeadingContainer {
                     font-weight: bold;
-                    font-size: 12;
+                    font-size: 2rem;
                 }
                 
                 .loginFormContainer {
@@ -54,30 +55,32 @@
                     flex-direction: column;
                 
                     .formItem {
-                        margin-top: 2%;
+                        margin-top: 3%;
                         width: 100%;
-                        justify-content: center;
+                        display: flex; /* Ensure it's a flex container */
+                        justify-content: flex-start; /* Align items to the left */
                         text-align: left;
-                    }
+                        font-size: 2rem;
+                    }                    
                     
                     input {
-                        margin-top: 2%;
-                        margin-bottom: 2%;
+                        margin-top: 1%;
+                        margin-bottom: 1%;
                         width: 100%;
-                        height: 30px; 
+                        height: 10%; 
                         display: block;
                         background-color: transparent;
                         border-radius: 8px;
                         border: 2px solid rgba($color: #e0e0e0, $alpha: 1); 
                         color: white; 
-                        font-size: 14px;
+                        font-size: 1.5rem;
                     }
                 }
 
                 .rememberMeContainer {
                     margin-top: 3%;
                     height: 20px;
-                    font-size: 12px;
+                    font-size: 1rem;
                     text-align: left;
                 }
             }
