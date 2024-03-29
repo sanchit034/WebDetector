@@ -17,7 +17,7 @@ export const Lobby = () => {
 
   return (
     <div className='lobby-container'>
-      <div>
+      <div className='navbar-cont'>
         <img src="/assets/Img3.png" alt="Navbar" className="navbar"/>
       </div>
       <div className='item-container'>

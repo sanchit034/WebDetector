@@ -111,7 +111,7 @@ export const Login = () => {
               <p>Login to your Account</p>
             </div>
             <div className="loginSubHeadingContainer">
-              <p>------------- Sign in -------------</p>
+              <p>---------- Sign in ----------</p>
             </div>
             <div className="loginFormContainer">
               <div className="loginFormItem">

@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 6%;
+    left: 4%;
     height: 50%;
     width: 85px;
     border-radius: 30px;
@@ -13,7 +13,33 @@
 }
 
 .images{
-    margin-top: 12.5px;
-    margin-bottom: 12.5px;
-    padding: 10px;    
+    margin-top: 1px;
+    margin-bottom: 1ch;
+    padding: 8px;    
 }
+
+.tooltip {
+    position: absolute;
+    left: 120%;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Irish Grover';
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.nav-item:hover .tooltip {
+    opacity: 1;
+}
+
+.tooltip {
+    opacity: 1;
+}     
+
+
+
+
