@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/Navbar.scss'
+import React from 'react';
+import '../styles/Navbar.scss';
 
 export const Sidebar = () => {
   const handleLogout = () => {
@@ -7,6 +7,7 @@ export const Sidebar = () => {
     sessionStorage.clear();
     window.location.href = "/";
   };
+
   return (
     <div className="sidebar">
       <a href="/lobby/profile"><img src="/assets/Img9.png" alt="Profile" className="images" /></a>
@@ -14,5 +15,5 @@ export const Sidebar = () => {
       <a href="/lobby/leaderboard"><img src="/assets/Img11.png" alt="Leaderboard" className="images"/></a>
       <button onClick={handleLogout}><img src="/assets/Img12.png" alt="Logout" className="images"/></button>
     </div>
-  )
-}
+  );
+};

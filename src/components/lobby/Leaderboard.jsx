@@ -12,6 +12,7 @@ export const Leaderboard = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/leaderboard/winners');
+        console.log(response);
         const sortedEntries = response.data.sort((a, b) => {
           if (a.score ?? 0 !== b.score ?? 0) {
             if(b.score ?? 0 > a.score ?? 0) {
