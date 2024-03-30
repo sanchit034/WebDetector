@@ -17,14 +17,15 @@ export const Lobby = () => {
 
   return (
     <div className='lobby-container'>
-      <div className='navbar-cont'>
-        <img src="/assets/Img3.png" alt="Navbar" className="navbar"/>
+      <div className='flex justify-between items-center navbar-container'>
+        <img src="/assets/webDetectorLogo.svg" alt="Navbar" className="navbar"/>
+        <img src="/assets/codehelpLogo.svg" alt="Navbar" className="navbar"/>
       </div>
       <div className='item-container'>
-        <div className='sidebar-container w-1/8'>
+        <div className='sidebar-container'>
           <Sidebar/>
         </div>
-        <div className='outlet-conatainer w-7/8'>
+        <div className='outlet-conatainer'>
           <Outlet/>
         </div>
       </div>

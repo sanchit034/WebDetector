@@ -8,6 +8,15 @@ export const Leaderboard = () => {
   const [isLoading, setIsLoading] = useState(true); 
   const [selfEntry, setSelfEntry] = useState([]);
 
+  function convertTimeIntoMinutes(userTimeDetails) {
+    const istDate = new Date(userTimeDetails);
+    const hour = istDate.getHours().toString().padStart(2, '0');
+    const minute = istDate.getMinutes().toString().padStart(2, '0');
+    const second = istDate.getSeconds().toString().padStart(2, '0');
+    
+    return (hour + ":" + minute + ":" + second);
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,6 +37,7 @@ export const Leaderboard = () => {
         setLeaderboardEntries(sortedEntries);
         for (let i = 0; i < sortedEntries.length; i++) {
           sortedEntries[i].maxProgress = i + 1;
+          sortedEntries[i].updatedAt = convertTimeIntoMinutes(sortedEntries[i].updatedAt)
         }
         console.log(sortedEntries);
         let userId = localStorage.getItem('userId');
@@ -52,62 +62,28 @@ export const Leaderboard = () => {
       <div className='leaderboard-img'><img src="/assets/Img14.png" alt="Leaderboard_Image" /></div>
       <div className='leaderboard'>
         <div className="winners">
-          <div className="card-content" id="card-content-header">
+        <div className="card-content" id="card-content-header">
             <div className='rank'>#</div>
             <div className='team-name'>Team Name</div>
             <div className='correct-answer'>Correct Answer</div>
             <div className='time'>Time</div>
           </div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>{leaderboardEntries[0].teamName}</div>
-            <div className='correct-answer'>{leaderboardEntries[4].score ?? "0"}</div>
-            <div className='time'>20:24</div>
-          </div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>{leaderboardEntries[1].teamName}</div>
-            <div className='correct-answer'>{leaderboardEntries[4].score ?? "0"}</div>
-            <div className='time'>20:24</div>
-          </div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>{leaderboardEntries[2].teamName}</div>
-            <div className='correct-answer'>{leaderboardEntries[4].score ?? "0"}</div>
-            <div className='time'>20:24</div>
-          </div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>{leaderboardEntries[3].teamName}</div>
-            <div className='correct-answer'>{leaderboardEntries[4].score ?? "0"}</div>
-            <div className='time'>20:24</div>
-          </div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>{leaderboardEntries[4].teamName}</div>
-            <div className='correct-answer'>{leaderboardEntries[4].score ?? "0"}</div>
-            <div className='time'>20:24</div>
-          </div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>{leaderboardEntries[5].teamName}</div>
-            <div className='correct-answer'>{leaderboardEntries[4].score ?? "0"}</div>
-            <div className='time'>20:24</div>
-          </div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>{leaderboardEntries[6].teamName}</div>
-            <div className='correct-answer'>{leaderboardEntries[4].score ?? "0"}</div>
-            <div className='time'>20:24</div>
-          </div>
+          {[...Array(leaderboardEntries.length < 5 ? leaderboardEntries.length : 5).keys()].map((index) => (
+            <div key={index}  className="card-content">
+              <div className='rank'>{leaderboardEntries[index].maxProgress}</div>
+              <div className='team-name'>{leaderboardEntries[index].teamName}</div>
+              <div className='correct-answer'>{leaderboardEntries[index].score ?? "0"}</div>
+              <div className='time'>{leaderboardEntries[index].updatedAt}</div>
+            </div>
+          ))}
         </div>
         <div className="your-position">
           <div className="your-position-heading">Your Position</div>
-          <div className="card-content">
-            <div className='rank'>1</div>
-            <div className='team-name'>name</div>
-            <div className='correct-answer'>4</div>
-            <div className='time'>20:24</div>
+          <div className="card-content your-position-card">
+            <div className='rank'>{selfEntry.maxProgress}</div>
+            <div className='team-name'>{selfEntry.teamName}</div>
+            <div className='correct-answer'>{selfEntry.score ?? "0"}</div>
+            <div className='time'>{selfEntry.updatedAt}</div>
           </div>
         </div>
       </div>
