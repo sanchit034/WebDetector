@@ -29,8 +29,13 @@
     }
 }
 
-.navbar{
-    height: 15%;
+.navbar-container {
+    height: 16%;
     width: 100%;
-    padding-top: 2%;
+}
+
+.navbar{
+    height: 72%;
+    margin-left: 16px;
+    margin-right: 10px;
 }
