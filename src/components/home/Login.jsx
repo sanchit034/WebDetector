@@ -111,7 +111,7 @@ export const Login = () => {
               <p>Login to your Account</p>
             </div>
             <div className="loginSubHeadingContainer">
-              <p>---------- Sign in ----------</p>
+              <p>-------- Sign in --------</p>
             </div>
             <div className="loginFormContainer">
               <div className="loginFormItem">
@@ -123,9 +123,9 @@ export const Login = () => {
               <input type="password" className="formItem" id="password" ref={passwordRef} defaultValue={savedPassword} placeholder=" Enter your password" />
               </div>
             </div>
-            <div className="rememberMeContainer">
+            {/* <div className="rememberMeContainer">
               <img src={rememberMeImage} alt="1" onClick={selectRememberMe} className='clickBtn'/> Remember me
-            </div>
+            </div> */}
             <div className="loginBtnContainer">
               <button onClick={handleSubmit} className='loginBtn'>Login</button>
             </div>

@@ -65,7 +65,7 @@ export const Dashboard = () => {
     hintTimer = setInterval(() => {
       setHintTime(prevTime => prevTime - 1);
       if(hintTime === 0) {
-        setHintTime(00);
+        setHintTime(900);
         // window.location.reload();
       }
       console.log(hintTime)
