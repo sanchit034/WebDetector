@@ -25,7 +25,7 @@ export const Lobby = () => {
         <div className='sidebar-container'>
           <Sidebar/>
         </div>
-        <div className='outlet-conatainer'>
+        <div className='outlet-container'>
           <Outlet/>
         </div>
       </div>

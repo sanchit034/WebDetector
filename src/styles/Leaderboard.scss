@@ -3,13 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
     color: white;
     
     .leaderboard-img{
         height: 40%;
         width: 35%;
+        position: relative;
 
         img {
             width: 100%;
@@ -18,12 +19,13 @@
     }
     
     .leaderboard{
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 70%;
-        width: 60%;
+        width: 80%;
         text-align: center;
 
         .winners {
@@ -65,8 +67,11 @@
             border: 1px solid rgba($color: #ffffff, $alpha: 1);
             font-size: 20px;
             font-family: "Irish Grover", system-ui;
-             font-weight: 400;
-             font-style: normal;
+            font-weight: 400;
+            font-style: normal;
+            :hover {
+                zoom: 1.15;
+            }
             
             .rank {
                 width: 20px;

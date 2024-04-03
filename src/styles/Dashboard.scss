@@ -1,0 +1,115 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    border-radius: 50px;
+    background-color: rgba($color: #5F6FAA, $alpha: 0.4);
+    border: 1px solid transparent;
+    font-family: "Irish Grover", system-ui;
+    color: white;
+    
+    .question-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        width: 100%;
+        
+        .question {
+            margin: 20px;
+            height: calc(100% - 40px);
+            aspect-ratio: 1.78;
+            max-width: calc(100% - 360px);
+            min-width: 40%;
+            border-radius: 35px;
+            background-color: white;
+
+            .question-img {
+                border-radius: 28px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .action-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 320px;
+            height: auto;
+            padding: 20px;
+
+            .question-number-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                font-size: 36px;
+
+                .search-img-container {
+                    aspect-ratio: 1;
+                    height: 100px;
+                    align-content: center;
+                    background-image: url('../../public/assets/question/magnifyingGlass.svg');
+                    background-size: cover;
+
+                    p {
+                        padding-right: 15px;
+                    }
+                }
+            }
+
+            .answer-container {
+
+                .answer-item {
+                    width: 100%;
+                }
+
+                label {
+                    font-size: 24px;
+                }
+                
+                input {
+                    padding: 5px;
+                    height: 44px;
+                    border-radius: 15px;
+                    font-size: 20px;
+                    color: rgba($color: #03010D, $alpha: 0.5)
+                }
+            }
+
+            .submit-container {
+                width: 100%;
+                .submit-btn {
+                    height: 44px;
+                    width: 44%;
+                    font-size: 24px;
+                    border-radius: 20px;
+                    background-color: #1E024E;
+                }
+            }
+        }
+    }
+    .hint-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgba($color: #5F6FAA, $alpha: 0.4);
+        margin: 20px;
+        border-radius: 35px;
+        .hint-heading {
+            width: 300px;
+        }
+
+        .hint-container {
+            width: calc(100% - 300px);
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-around;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/Leaderboard.scss';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 export const Leaderboard = () => {
   const [leaderboardEntries, setLeaderboardEntries] = useState([]);
@@ -20,6 +21,12 @@ export const Leaderboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const lastCallTime = localStorage.getItem('lastApiCallTime');
+        const currentTime = new Date().getTime();
+        const timeDiff = currentTime - Number(lastCallTime);
+        if (lastCallTime && timeDiff < 1500) {
+          return;
+        }
         const response = await axios.get('http://localhost:5000/api/leaderboard/winners');
         console.log(response);
         const sortedEntries = response.data.sort((a, b) => {
@@ -46,6 +53,7 @@ export const Leaderboard = () => {
         console.log(userDetails);
       } catch (error) {
         setError(error);
+        console.log(error)
       } finally {
         setIsLoading(false);
       }
@@ -59,7 +67,7 @@ export const Leaderboard = () => {
 
   return (
     <div className='leaderboard-container'>
-      <div className='leaderboard-img'><img src="/assets/Img14.png" alt="Leaderboard_Image" /></div>
+      <div className='leaderboard-img'><img src="/assets/leaderboardImage.png" alt="Leaderboard_Image" /></div>
       <div className='leaderboard'>
         <div className="winners">
         <div className="card-content" id="card-content-header">
