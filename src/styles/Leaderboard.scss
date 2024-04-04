@@ -1,35 +1,97 @@
-.container{
+.leaderboard-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    height: 90%;
+    width: 90%;
+    color: white;
+    
+    .leaderboard-img{
+        height: 40%;
+        width: 35%;
+        position: relative;
 
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    z-index: -1; 
-}
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .leaderboard{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+        width: 80%;
+        text-align: center;
 
-.leaderboard-container {
-    display: flex;
-    flex-direction: column;
-}
+        .winners {
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            background-color: rgba($color: #5F6FAA, $alpha: 0.4);
+            border: 1px solid transparent;
+            //border-image: linear-gradient(to bottom right, rgba($color: #ffffff, $alpha: 1), rgba($color: #999999, $alpha: 1)) 1;
+        }
 
-.leaderboard-img{
-    height: 35%;
-    width: 35%;
-}
+        .your-position {
+            font-size: 24px;
+            font-family: "Irish Grover", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            width: 100%;
+            padding: 20px;
+            
+            .your-position-card {
+                background-color: rgba($color: #5F6FAA, $alpha: 0.4);
+                font-size: 20px;
+            }
+        }
 
-.leaderboard{
-    position: absolute;
-    left:20%;
-    top:20%;
-    height: 50%;
-    width: 40%;
-    background-color: #37778C;
+        .card-content {
+            width: 100%;
+            height: 36px;
+            margin: 1px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 25px;
+            border: 1px solid rgba($color: #ffffff, $alpha: 1);
+            font-size: 20px;
+            font-family: "Irish Grover", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            :hover {
+                zoom: 1.15;
+            }
+            
+            .rank {
+                width: 20px;
+            }
+
+            .team-name {
+                width: 350px;
+            }
+
+            .correct-answer {
+                width: 200px;
+            }
+             
+            .time {
+                width: 100px;
+            }
+        }
+
+        #card-content-header {
+            border: none;
+        }
+    }
 }

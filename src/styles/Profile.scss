@@ -1,0 +1,69 @@
+.large-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 55vh;
+    width: 55vw;
+    background-color: #5f6faa5e;
+    border-radius: 45px;
+    border-width: 1.8px;
+    border-style: solid;
+    padding: 10px;
+    position: relative;
+    color: white;
+}
+
+
+.user-container{
+    background-color: transparent;
+}
+
+.box-parent-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.input-field{
+    margin: 1rem;
+}
+
+.input-box {
+    height: 5vh;
+    width: 20vw;
+    background-color: transparent;
+    border: 2.5px solid white;
+    border-radius: 45px;
+}
+
+
+.text{
+    display: flex;
+    justify-content: left;
+    font-family: 'Irish Grover';
+    font-size: 2rem;
+    font-weight: 400;
+    color: #FFFF;
+    z-index: 1000;
+    position: relative;
+    left: 10px;
+}
+
+.details {
+    font-size: 1.5rem;
+    height: 44px;
+    padding: 10px;
+    padding-top: 0%;
+    background-color: transparent;
+    border: 2.5px solid white;
+    border-radius: 45px;
+}
