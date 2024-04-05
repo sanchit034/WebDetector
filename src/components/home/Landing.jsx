@@ -171,7 +171,7 @@ export const Landing = ()=> {
         <div className='h-full'style={{marginRight: '10px', height: '72%'}}><img className='h-full' src="assets/codehelpLogo.svg" alt="" /></div>
       </motion.div>
       <motion.img
-        src="assets/webDetectorText.png"
+        src="assets/WebdetectorText.png"
         alt="Text"
         style={{ width: '46%', aspectRatio:'4.55', minWidth:'220px', bottom: '-55%', position: 'absolute', opacity: 0, transform: 'translate(0%, -50vh)' }}
         animate={textAnimation}
