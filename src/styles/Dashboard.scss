@@ -127,6 +127,14 @@
             align-items: start;
             justify-content: space-around;
         }
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+
+            .hint-container {
+                width: 95%;
+            }
+        }
     }
 
     @media (max-width:1000px) {
