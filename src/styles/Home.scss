@@ -95,7 +95,6 @@
     @media (max-width: 1000px) {
         .loginPage {
             width: 114%;
-            transform: translate(-6%, 0%);
         }
     }
     @media (max-width: 750px) {
@@ -114,6 +113,120 @@
 
                 .loginContent {
                     width: 80%;
+                }
+            }
+        }
+    }
+
+
+
+    // About Page
+    .about-container {
+        color: white;
+        font-family: "Irish Grover", system-ui;
+        font-size: 1rem;
+
+        .heading-container {
+            font-size: 2.5rem;
+            position: relative;
+            top: 0px;
+            width: 100%;
+        }
+
+        .about-content-container {
+            position: relative;
+            top: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            .about-content {
+                width: 90%;
+                height: auto;
+                padding: 20px;
+                padding-bottom: 6px;
+                margin-bottom: 20px;
+                padding-top: 18px;
+                text-align: justify;
+                background-color: rgba($color: #5F6FAA, $alpha: 0.4);
+                border-radius: 33px;
+            }
+
+            .about-card-container {
+                padding: 10px;
+                max-width: 1200px;
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+
+
+                .about-card {
+                    width: 250px;
+                    aspect-ratio: 1;
+                    padding: 10px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                @media (max-width: 850px) {
+                    .about-card-1 {
+                        width: 0px;
+                    }
+                }
+
+                @media (max-width: 550px) {
+                    .about-card-2 {
+                        width: 0px;
+                    }
+                }
+            }
+        }
+
+        .about-footer {
+            position: absolute;
+            top: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            padding: 0px 5%;
+            
+            .web-detector-text {
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+
+            .contact-details {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 70px;
+
+                img {
+                    width: 30px;
+                    aspect-ratio: 1;
+                }
+            }
+        }
+
+        @media (max-width: 500px) {
+            .heading-container {
+                font-size: 3rem;
+            }
+
+            .about-content-container {
+                .about-content {
+                    padding: 15px;
+                    width: 90%;
                 }
             }
         }
