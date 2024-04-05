@@ -24,7 +24,7 @@ export const Dashboard = ({ initialTime }) => {
     const fetchData = async () => {
       if((localStorage.getItem('teamCode') ?? "" != "")) {
         try {
-          const response = await axios.get('http://localhost:5000/api/dashboard/contest/1')
+          const response = await axios.get('https://webdetector-backend.onrender.com/api/dashboard/contest/1')
           setImageURL(response.data.questionURL);
           setQuestionHint(response.data.questionHint);
           const updatedTime = new Date(response.data.lastUpdated);
@@ -63,7 +63,7 @@ export const Dashboard = ({ initialTime }) => {
   useEffect(() => {
     hintTimer = setInterval(() => {
       setHintTime(prevTime => prevTime - 1);
-      if(hintTime % 300 === 0) {
+      if(hintTime % 300 === 1) {
          window.location.reload();
       }
       console.log(hintTime)
@@ -77,7 +77,7 @@ export const Dashboard = ({ initialTime }) => {
     const answer = answerRef.current.value.trim().replace(/\s+/g, ' ').toLowerCase();
 
     try {
-      const response = await axios.put('http://localhost:5000/api/dashboard/contest/1', {
+      const response = await axios.put('https://webdetector-backend.onrender.com/api/dashboard/contest/1', {
         answer: answer 
       });
       console.log(response.data); 
