@@ -12,6 +12,11 @@
     padding: 10px;
     position: relative;
     color: white;
+
+    @media (max-width: 1000px){
+        width: 65vw;
+        height: 50vh;
+    }
 }
 
 
@@ -24,6 +29,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 1000px){
+        flex-direction: column;
+    }
 }
 
 .box-container{
@@ -35,6 +43,9 @@
 
 .input-field{
     margin: 1rem;
+    @media(max-width:1000px) {
+        justify-content: center;
+    }
 }
 
 .input-box {
@@ -56,9 +67,15 @@
     z-index: 1000;
     position: relative;
     left: 10px;
+
+    @media(max-width:1000px) {
+        justify-content: center;
+        left: 0px;
+    }
 }
 
 .details {
+    display: flex;
     font-size: 1.5rem;
     height: 44px;
     padding: 10px;
@@ -66,4 +83,8 @@
     background-color: transparent;
     border: 2.5px solid white;
     border-radius: 45px;
+
+    @media(max-width:1000px) {
+        justify-content: center;
+    }
 }
