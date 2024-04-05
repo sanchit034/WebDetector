@@ -3,9 +3,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import "../../styles/Dashboard.scss";
 
-export const Dashboard = () => {
+export const Dashboard = ({ initialTime }) => {
   let answerRef = useRef();
-  const initialTime = 8;
   const [time, setTime] = useState(initialTime);
   const [hintTime, setHintTime] = useState(0);
   const [imageURL, setImageURL] = useState(''); 
@@ -64,9 +63,8 @@ export const Dashboard = () => {
   useEffect(() => {
     hintTimer = setInterval(() => {
       setHintTime(prevTime => prevTime - 1);
-      if(hintTime === 0) {
-        setHintTime(900);
-        // window.location.reload();
+      if(hintTime % 300 === 0) {
+         window.location.reload();
       }
       console.log(hintTime)
     }, 1000);
@@ -104,6 +102,25 @@ export const Dashboard = () => {
     return <div></div>;
   }
 
+  if(time > 0) {
+    return <div className='counter-container'>
+      <div className="counter-image"><img src="assets/counter.svg" alt="" /></div>
+      <div className="counter-text">Web Detector will start in</div>
+      <div className="time-text">
+        <div>Hours</div>
+        <div>Minutes</div>
+        <div>Seconds</div>
+      </div>
+      <div className="time-value">
+        <div>{Math.floor((time  / 3600))}</div>
+        <div>:</div>
+        <div>{(Math.floor(time / 60)) % 60}</div>
+        <div>:</div>
+        <div>{Math.floor(time % 60)}</div>
+      </div>
+    </div>
+  }
+
   return (
     <div className="dashboard-container">
       <div className="question-container">
@@ -127,7 +144,7 @@ export const Dashboard = () => {
             <button className="submit-btn" onClick={handleSubmit}>Submit</button>
           </div>
           {questionHint.length < 3 && <div className="hint-timer-container">
-            {hintAvailableText}<br/>{hintTime} seconds
+            {hintAvailableText}<br/>{Math.floor((hintTime % 300) / 60)} minutes {hintTime % 60} seconds
           </div>}
           {questionHint.length === 3 && <div className="hint-timer-container">
             No more Hint
