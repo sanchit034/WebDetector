@@ -11,7 +11,7 @@
     margin: auto;
     background-color: rgba($color: #5f6faa, $alpha: 0.4);
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
         height: 34%;
     }
 }
@@ -35,7 +35,7 @@
     opacity: 0;
     transition: opacity 0.3s;
 
-    @media (max-width:1000px){
+    @media (max-width:1100px){
         left: 105%;
         font-size: 1.5rem;
     }

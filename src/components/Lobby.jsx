@@ -28,12 +28,14 @@ export const Lobby = () => {
         <img src="/assets/webDetectorLogo.svg" alt="Navbar" className="navbar"/>
         <img src="/assets/codehelpLogo.svg" alt="Navbar" className="navbar"/>
       </div>
-      <div className='item-container'>
-        <div className='sidebar-container' onClick={toggleOutlet}>
-          <Sidebar/>
-        </div>
-        <div className='outlet-container'>
-          {isSidebarClicked ? <AnotherDiv /> : <Outlet />}
+      <div className='content-container'>
+        <div className='item-container'>
+          <div className='sidebar-container' onClick={toggleOutlet}>
+            <Sidebar/>
+          </div>
+          <div className='outlet-container'>
+            {isSidebarClicked ? <AnotherDiv /> : <Outlet />}
+          </div>
         </div>
       </div>
     </div>
@@ -42,27 +44,52 @@ export const Lobby = () => {
 
 // Define the component for the other div to render when sidebar-container is clicked
 const AnotherDiv = () => {
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.href = "/";
+  };
+
   return (
     <div className="another-div">
       <div className='navbar-element'>
         <a href="/lobby/profile">
-          <img src="/assets/Img9.png" alt="Profile" className="images" />
-          <span className='text'>Profile</span>
+          <div className='container'>
+            <div className='imageContainer'><img src="/assets/Img9.png" alt="Profile" className="images" /></div>
+            <div className='textContainer'>Profile</div>
+          </div>
         </a> 
       </div>  
 
-      <div>
+      <div className='line'></div>
+
+      <div className='navbar-element'>
         <a href="/lobby">
-          <img src="/assets/Img10.png" alt="Questions" className="images" />
-          <span className='text'>Questions</span>
+          <div className='container'>
+            <div className='imageContainer'><img src="/assets/Img10.png" alt="Questions" className="images" /></div>
+            <div className='textContainer'>Questions</div>
+          </div>
+        </a>  
+      </div>
+
+      <div className='line'></div>
+
+      <div className='navbar-element'>
+        <a href="/lobby/leaderboard">
+          <div className='container'>
+            <div className='imageContainer'><img src="/assets/Img11.png" alt="Leaderboard" className="images" /></div>
+            <div className='textContainer'>Leaderboard</div>
+          </div>
         </a>
       </div>
 
-      <div>
-        <a href="/lobby/leaderboard">
-          <img src="/assets/Img11.png" alt="Leaderboard" className="images" />
-          <span className='text'>Leaderboard</span>
-        </a>
+      <div className='line'></div>
+
+      <div className='navbar-element'>
+        <div className='container'>
+          <div className='imageContainer'><button onClick={handleLogout}><img src="/assets/Img12.png" alt="Logout" className="images"/></button></div>
+          <div className='textContainer'>Logout</div>
+        </div>
       </div>
     </div>
   );
