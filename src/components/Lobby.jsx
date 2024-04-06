@@ -86,10 +86,12 @@ const AnotherDiv = () => {
       <div className='line'></div>
 
       <div className='navbar-element'>
+      <button onClick={handleLogout}>
         <div className='container'>
-          <div className='imageContainer'><button onClick={handleLogout}><img src="/assets/Img12.png" alt="Logout" className="images"/></button></div>
+          <div className='imageContainer'><img src="/assets/Img12.png" alt="Logout" className="images"/></div>
           <div className='textContainer'>Logout</div>
         </div>
+        </button>  
       </div>
     </div>
   );
