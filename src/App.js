@@ -9,7 +9,7 @@ import { Dashboard } from "./components/lobby/Dashboard";
 import { Leaderboard } from "./components/lobby/Leaderboard";
 import { Team } from "./components/lobby/Team";
 import { Profile } from "./components/lobby/Profile";
-// import { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast'
 // import { useSelector } from "react-redux";
 import './App.css';
 
@@ -32,6 +32,7 @@ function App() {
               <Route path="profile" element={<Profile />} />
             </Route>
         </Routes>
+        <Toaster/>
       </Router>
     </div>
   );
