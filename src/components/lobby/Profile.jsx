@@ -15,8 +15,8 @@ export const Profile = () => {
             {/* <div><input type="text" className='input-box'/></div> */}
           </div>
           <div className='input-field'>
-            <div className='text'>Team Code</div>
-            <div className='details'>{localStorage.getItem("teamCode")}</div>
+            <div className='text'>Your Name</div>
+            <div className='details'>{localStorage.getItem("username")}</div>
             {/* <div><input type="text" className='input-box'/></div> */}
           </div>
         </div>

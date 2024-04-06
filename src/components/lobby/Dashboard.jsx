@@ -143,7 +143,7 @@ export const Dashboard = ({ initialTime }) => {
           <div className="submit-container">
             <button className="submit-btn" onClick={handleSubmit}>Submit</button>
           </div>
-          {questionHint.length < 3 && <div className="hint-timer-container">
+          {hintTime > 0 && questionHint.length < 3 && <div className="hint-timer-container">
             {hintAvailableText}<br/>{Math.floor((hintTime % 300) / 60)} minutes {hintTime % 60} seconds
           </div>}
           {questionHint.length === 3 && <div className="hint-timer-container">
