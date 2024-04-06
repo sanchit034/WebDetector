@@ -145,7 +145,7 @@ export const Landing = ()=> {
         <div className='h-full'style={{marginRight: '10px', height: '72%'}}><img className='h-full' src="assets/codehelpLogo.svg" alt="" /></div>
       </motion.div>
       <motion.img
-        src="assets/webdetectorText.png"
+        src="assets/WebDetectorText.png"
         alt="Text"
         style={{ width: '46%', aspectRatio:'4.55', minWidth:'220px', bottom: '-55%', position: 'absolute', opacity: 0, transform: 'translate(0%, -50vh)' }}
         animate={textAnimation}
@@ -174,14 +174,14 @@ export const Landing = ()=> {
         animate={loginAnimation}
       />
       </button>
-      <button onClick={handleAboutClick}>
+      {/* <button onClick={handleAboutClick}>
       <motion.img
         src="assets/Img8.png"
         alt="About Text"
         style={{ width: '10.6%', aspectRatio:6.80, minWidth:'90px', right:'4%', bottom:'6%', position: 'absolute', opacity: 0 }}
         animate={aboutAnimation}
       />
-      </button>
+      </button> */}
       {/*Login Page Items */}
       <motion.div style={{width:'80%', height:'70%', left:'-100%', top:'20%', position:'absolute',opacity: 0}} animate={loginContentContainerAnimation}>
         <Login/>

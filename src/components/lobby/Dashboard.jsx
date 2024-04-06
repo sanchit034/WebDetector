@@ -25,7 +25,8 @@ export const Dashboard = () => {
     const fetchData = async () => {
       if((localStorage.getItem('teamCode') ?? "" != "")) {
         try {
-          const response = await axios.get('http://localhost:5000/api/dashboard/contest/1')
+          const apiAddress = process.env.API_URL || "https://webdetector-backend.onrender.com";
+          const response = await axios.get(apiAddress + '/api/dashboard/contest/1')
           setImageURL(response.data.questionURL);
           setQuestionHint(response.data.questionHint);
           const updatedTime = new Date(response.data.lastUpdated);
@@ -63,10 +64,9 @@ export const Dashboard = () => {
 
   useEffect(() => {
     hintTimer = setInterval(() => {
-      setHintTime(prevTime => prevTime - 1);
-      if(hintTime === 0) {
-        setHintTime(900);
-        // window.location.reload();
+      setHintTime(prevTime > 0 ? prevTime - 1 : 0);
+      if(hintTime === 1) {
+         window.location.reload();
       }
       console.log(hintTime)
     }, 1000);
@@ -79,7 +79,8 @@ export const Dashboard = () => {
     const answer = answerRef.current.value.trim().replace(/\s+/g, ' ').toLowerCase();
 
     try {
-      const response = await axios.put('http://localhost:5000/api/dashboard/contest/1', {
+      const apiAddress = process.env.API_URL || "https://webdetector-backend.onrender.com";
+      const response = await axios.put(apiAddress + '/api/dashboard/contest/1', {
         answer: answer 
       });
       console.log(response.data); 
@@ -127,7 +128,7 @@ export const Dashboard = () => {
             <button className="submit-btn" onClick={handleSubmit}>Submit</button>
           </div>
           {questionHint.length < 3 && <div className="hint-timer-container">
-            {hintAvailableText}<br/>{hintTime} seconds
+            {hintAvailableText}<br/>{hintTime % 300} seconds
           </div>}
           {questionHint.length === 3 && <div className="hint-timer-container">
             No more Hint
