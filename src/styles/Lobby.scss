@@ -31,28 +31,28 @@
             z-index: 3;
         }
 
-        // @media (max-width: 800px) {
-        //     .outlet-container {
-        //         zoom: 0.8;
-        //     }
-        //     .sidebar-container {
-        //         zoom: 0.8;
-        //     }
-        // }
-        //  @media (max-width: 550px) {
-        //      flex-direction: column;
+        @media (max-width: 800px) {
+            .outlet-container {
+                zoom: 0.8;
+            }
+            .sidebar-container {
+                zoom: 0.8;
+            }
+        }
+        @media (max-width: 650px) {
+            flex-direction: column;
 
-        //      .sidebar-container {
-        //          width: 50px;
-        //          margin-right: 75%;
-        //         //  zoom: 0.5;
-        //      }
-             
-        //     //  .outlet-container {
-        //     //     //  width: 90%;
-        //     //     //  zoom: 0.5;
-        //     //  }
-        //  }
+            .sidebar-container {
+                width: 50px;
+                margin-right: 75%;
+                zoom: 0.5;
+            }
+
+            .outlet-container {
+                width: 90%;
+                zoom: 0.5;
+            }
+        }
 
         @media (max-height: 500px) {
             zoom: 0.65;
@@ -62,46 +62,26 @@
             zoom: 0.55;
         }
 
-        @media (max-width: 1000px) {
-            zoom: 0.9;
-        }
-
-        @media (max-width: 900px) {
-            zoom: 0.8;
-        }
-
-        @media (max-width: 800px) {
-            zoom: 0.7;
-        }
-
-        @media (max-width: 600px) {
-            zoom: 0.6;
-        }
-
-        @media (max-width: 500px) {
-            zoom: 0.5;
-        }
-
     }
 }
 
 .navbar-container {
     height: 16vh;
     width: 100vw;
-    // @media (max-width:650px){
-    //     width: 85vw;
-    //     height: 12vh;
-    // }
+    @media (max-width:650px){
+        width: 85vw;
+        height: 12vh;
+    }
 }
 
 .navbar{
     height: 72%;
     margin-left: 16px;
     margin-right: 10px;
-    // @media (max-width:650px){
-    //     margin-left: 16px;
-    //     margin-right: 55px;
-    // }
+    @media (max-width:650px){
+        margin-left: 16px;
+        margin-right: 55px;
+    }
 }
 
 .text{

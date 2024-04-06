@@ -14,7 +14,7 @@ export const Sidebar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 50);
+      setIsMobileView(window.innerWidth <= 650);
     };
 
     handleResize();
