@@ -222,6 +222,14 @@
     //border-image: linear-gradient(to bottom right, rgba($color: #ffffff, $alpha: 1), rgba($color: #999999, $alpha: 1)) 1;
     border-radius: 50px;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
+
+    @media (max-width:850px) {
+        zoom: 0.6;
+    }
+
+    @media (max-width:450px) {
+        zoom: 0.4;
+    }
     
     .counter-text {
         font-size: 2.8rem;
