@@ -20,8 +20,7 @@ export const Login = () => {
     const password = passwordRef.current.value;
 
     try {
-      const apiAddress = process.env.API_URL || "https://webdetector-backend.onrender.com";
-      const { data } = await axios.post(apiAddress + '/api/auth/login', {
+      const { data } = await axios.post('https://webdetector-backend.onrender.com/api/auth/login', {
         email,
         password
       });
