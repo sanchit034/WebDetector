@@ -27,7 +27,8 @@ export const Leaderboard = () => {
         if (lastCallTime && timeDiff < 1500) {
           return;
         }
-        const response = await axios.get('http://localhost:5000/api/leaderboard/winners');
+        const apiAddress = process.env.API_URL || "https://webdetector-backend.onrender.com";
+        const response = await axios.get(apiAddress + '/api/leaderboard/winners');
         console.log(response);
         const sortedEntries = response.data.sort((a, b) => {
           if (a.score ?? 0 !== b.score ?? 0) {
