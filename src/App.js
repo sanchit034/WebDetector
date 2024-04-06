@@ -14,7 +14,7 @@ import { Profile } from "./components/lobby/Profile";
 import './App.css';
 
 function App() {
-  const deadline = new Date('2024-04-06T21:30:00');
+  const deadline = new Date('2024-04-06T21:50:00');
   const now = new Date();
   
   const timeDiff = deadline - now;
@@ -29,7 +29,7 @@ function App() {
     initialTime = days * 24 * 3600 + hours * 3600 + minutes * 60 + remainingSeconds;
     console.log(`Time until April 6th, 9:30 PM: ${days} days, ${hours} hours, ${minutes} minutes, ${remainingSeconds} seconds`);
   }
-
+initialTime = 0;
   return (
     <div className="App">
       <Router>
