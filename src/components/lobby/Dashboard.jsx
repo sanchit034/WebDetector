@@ -18,14 +18,15 @@ export const Dashboard = ({ initialTime }) => {
   let timer;
   let hintTimer;
   const currentTime = new Date();
-
+ 
   useEffect(() => {
     // Fetch image URL from backend
     const fetchData = async () => {
       if((localStorage.getItem('teamCode') ?? "" != "")) {
         try {
+          setImageURL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbmEd87LaA5t-mIDqQz5YTmheplGakiD0z062tLc59N2a2RkznfzifI07m1XsBUpvdsbM&usqp=CAU")
           const response = await axios.get('https://webdetector-backend.onrender.com/api/dashboard/contest/1')
-          setImageURL(response.data.questionURL);
+          //setImageURL(response.data.questionURL);
           setQuestionHint(response.data.questionHint);
           const updatedTime = new Date(response.data.lastUpdated);
           if(questionHint.length) {
@@ -136,12 +137,12 @@ export const Dashboard = ({ initialTime }) => {
           </div>
           <div className="answer-container">
             <form onSubmit={handleSubmit}>
-              <label htmlFor="answer" className='answer-item'>Your Answer</label>
-              <input type="text"  className="answer-item" id="your-answer" ref={answerRef} placeholder=" Your Answer"/>
+              <label htmlFor="answer" className='answer-item'>Test Completed</label>
+              <input type="text"  className="answer-item" id="your-answer" ref={answerRef} placeholder=" Test Completed"/>
             </form>
           </div>
           <div className="submit-container">
-            <button className="submit-btn" onClick={handleSubmit}>Submit</button>
+            <button className="submit-btn" onClick={handleSubmit}></button>
           </div>
           {questionHint.length < 3 && <div className="hint-timer-container">
             {hintAvailableText}<br/>{hintTime % 300} seconds
