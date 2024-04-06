@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/Leaderboard.scss';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { Dashboard } from './Dashboard';
 
-export const Leaderboard = () => {
+export const Leaderboard = ({initialTime}) => {
   const [leaderboardEntries, setLeaderboardEntries] = useState([]);
   const [error, setError] = useState(null); 
   const [isLoading, setIsLoading] = useState(true); 
@@ -27,7 +28,7 @@ export const Leaderboard = () => {
         if (lastCallTime && timeDiff < 1500) {
           return;
         }
-        const response = await axios.get('https://webdetector-backend.onrender.com/api/leaderboard/winners');
+        const response = await axios.get('https://webdetector-backend.onrender.com/api/winners');
         console.log(response);
         const sortedEntries = response.data.sort((a, b) => {
           if (a.score ?? 0 !== b.score ?? 0) {
@@ -64,6 +65,11 @@ export const Leaderboard = () => {
   if (isLoading) {
     return <div className=' text-white text-4xl'>Leaderboard is updating...</div>;
   }
+  return (
+    <Dashboard initialTime={initialTime}/>
+  )
+
+  
 
   return (
     <div className='leaderboard-container'>

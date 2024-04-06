@@ -14,7 +14,7 @@ import { Toaster } from 'react-hot-toast'
 import './App.css';
 
 function App() {
-  const deadline = new Date('2024-04-06T19:40:00');
+  const deadline = new Date('2024-04-06T21:30:00');
   const now = new Date();
   
   const timeDiff = deadline - now;
@@ -27,7 +27,7 @@ function App() {
     const minutes = Math.floor((seconds % 3600) / 60);
     const remainingSeconds = seconds % 60;
     initialTime = days * 24 * 3600 + hours * 3600 + minutes * 60 + remainingSeconds;
-    console.log(`Time until April 6th, 9:00 PM: ${days} days, ${hours} hours, ${minutes} minutes, ${remainingSeconds} seconds`);
+    console.log(`Time until April 6th, 9:30 PM: ${days} days, ${hours} hours, ${minutes} minutes, ${remainingSeconds} seconds`);
   }
 
   return (
@@ -42,7 +42,7 @@ function App() {
             <Route path="about" element={<About/>}/>
             <Route path="/lobby/" element={<Lobby />}>
               <Route index element={<Dashboard initialTime = {initialTime}/>} />
-              <Route path="leaderboard" element={<Leaderboard />} />
+              <Route path="leaderboard" element={<Leaderboard initialTime={initialTime} />} />
               <Route path="team" element={<Team />} />
               <Route path="profile" element={<Profile />} />
             </Route>
