@@ -39,6 +39,9 @@
     @media (max-width: 1000px){
         flex-direction: column;
     }
+    @media (max-width: 600px) {
+        flex-direction: row;
+    }
 }
 
 .box-container{
