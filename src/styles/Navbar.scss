@@ -12,9 +12,9 @@
     margin: auto;
     background-color: rgba($color: #5f6faa, $alpha: 0.4);
 
-    // @media (max-width: 1000px) {
-    //     height: 34%;
-    // }
+    @media (max-width: 1000px) {
+        height: 34%;
+    }
 }
 
 .images{
@@ -36,10 +36,10 @@
     opacity: 0;
     transition: opacity 0.3s;
 
-    // @media (max-width:1000px){
-    //     left: 105%;
-    //     font-size: 1.5rem;
-    // }
+    @media (max-width:1000px){
+        left: 105%;
+        font-size: 1.5rem;
+    }
 }
 
 .nav-item:hover .tooltip {
