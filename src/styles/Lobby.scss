@@ -39,18 +39,29 @@
             z-index: 3;
         }
 
+        @media (max-width: 800px) {
+            .outlet-container {
+                zoom: 0.8;
+            }
+            .sidebar-container {
+                zoom: 0.8;
+            }
+        }
         @media (max-width: 650px) {
             flex-direction: column;
 
             .sidebar-container {
                 width: 50px;
                 margin-right: 75%;
+                zoom: 0.5;
             }
 
             .outlet-container {
                 width: 90%;
+                zoom: 0.5;
             }
         }
+
     }
 }
 
