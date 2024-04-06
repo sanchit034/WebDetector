@@ -63,7 +63,7 @@ export const Dashboard = () => {
 
   useEffect(() => {
     hintTimer = setInterval(() => {
-      setHintTime(prevTime > 0 ? prevTime - 1 : 0);
+      setHintTime(prevTime => prevTime > 0 ? prevTime - 1 : 0);
       if(hintTime === 1) {
          window.location.reload();
       }
