@@ -5,7 +5,8 @@
     height: auto;
     border-radius: 50px;
     background-color: rgba($color: #5F6FAA, $alpha: 0.4);
-    border: 1px solid transparent;
+    border: 1px solid rgba($color: #999999, $alpha: 1);
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
     font-family: "Irish Grover", system-ui;
     color: white;
     
@@ -15,14 +16,6 @@
         flex-wrap: wrap;
         height: auto;
         width: 100%;
-
-        @media (max-width:650px) {
-            height: 70%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
         
         .question {
             margin: 20px;
@@ -39,13 +32,27 @@
                 width: 100%;
             }
 
-            @media (min-width: 650px) and (max-width: 1100px){
-                max-width: calc(100% - 100px);
+            @media (max-width:1000px){
+                //max-width: calc(100% - 100px);
             }
-
-            @media (max-width: 650px){
-                max-width: calc(100% - 25px);
-                max-height: 40%;
+            @media (max-width: 1000px) {
+                zoom: 0.9;
+            }
+    
+            @media (max-width: 900px) {
+                zoom: 0.8;
+            }
+    
+            @media (max-width: 800px) {
+                zoom: 0.7;
+            }
+    
+            @media (max-width: 600px) {
+                zoom: 0.6;
+            }
+    
+            @media (max-width: 500px) {
+                zoom: 0.5;
             }
         }
 
@@ -58,10 +65,6 @@
             height: auto;
             padding: 20px;
 
-            @media (max-width: 650px) {
-                padding-top: 0px;
-            }
-
             .question-number-container {
                 display: flex;
                 flex-direction: row;
@@ -69,20 +72,12 @@
                 justify-content: space-around;
                 font-size: 36px;
 
-                @media (max-width: 650px){
-                    font-size: 18px;
-                }
-
                 .search-img-container {
                     aspect-ratio: 1;
                     height: 100px;
                     align-content: center;
                     background-image: url('../../public/assets/question/magnifyingGlass.svg');
                     background-size: cover;
-
-                    @media (max-width:650px) {
-                        height: 60px;
-                    }
 
                     p {
                         padding-right: 15px;
@@ -98,10 +93,6 @@
 
                 label {
                     font-size: 24px;
-
-                    @media (max-width: 650px) {
-                        font-size: 15px;
-                    }
                 }
                 
                 input {
@@ -109,13 +100,7 @@
                     height: 44px;
                     border-radius: 15px;
                     font-size: 20px;
-                    color: rgba($color: #03010D, $alpha: 0.5);
-
-                    @media (max-width: 650px) {
-                        height: 22px;
-                        font-size: 12.5px;
-                        padding: 2.5px;
-                    }
+                    color: rgba($color: #03010D, $alpha: 0.5)
                 }
             }
 
@@ -127,35 +112,20 @@
                     font-size: 24px;
                     border-radius: 20px;
                     background-color: #1E024E;
-
-                    @media (max-width: 650px) {
-                        height: 22px;
-                        font-size: 12.5px;
-                        width: 28%;
-                    }
                 }
             }
         }
 
-        @media (min-width: 650px) and (max-width: 1100px) {
+        @media (max-width: 1000px) {
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            .action-container {
-                align-items: center;
-                justify-content: center;
-            }
-        }
-
-    }
-
-    .hint-timer-container {
-        @media (max-width: 650px) {
-            font-size: 10px;
+             align-items: center;
+             justify-content: center;
+             .action-container {
+                 align-items: center;
+                 justify-content: center;
+             }
         }
     }
-
     .hint-section {
         display: flex;
         flex-direction: row;
@@ -164,18 +134,8 @@
         background-color: rgba($color: #5F6FAA, $alpha: 0.4);
         margin: 20px;
         border-radius: 35px;
-
-        @media (max-width:650px){
-            height: 30%;
-            margin: 5px;
-        }
-
         .hint-heading {
             width: 300px;
-            @media (max-width: 650px) {
-                width: 10px;
-                font-size: 12px;
-            }
         }
 
         .hint-container {
@@ -184,25 +144,56 @@
             flex-direction: column;
             align-items: start;
             justify-content: space-around;
-
-             @media (max-width: 650px) {
-                width: calc(100% - 70px);
-            }
         }
 
-        .hint{
-            @media (max-width: 650px) {
-                font-size: 11.5px;
-            }
+        @media (max-width: 1000px) {
+            //flex-direction: column;
+
+            // .hint-container {
+            //     width: 95%;
+            // }
         }
     }
 
-    @media (min-width: 650px) and (max-width: 1100px) {
-        width: 65%;
+    @media (max-width:1000px) {
+        // width: 65%;
+    }
+}
+
+.counter-container {
+    width: 70%;
+    height: 70%;
+    background-color: rgba($color: #5F6FAA, $alpha: 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-family: "Irish Grover", system-ui;
+    border: 1px solid rgba($color: #999999, $alpha: 1);
+    //border-image: linear-gradient(to bottom right, rgba($color: #ffffff, $alpha: 1), rgba($color: #999999, $alpha: 1)) 1;
+    border-radius: 50px;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
+    
+    .counter-text {
+        font-size: 2.8rem;
     }
 
-    @media (max-width: 650px) {
-        height: 90%;
-        width: 100%;
+    .time-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 80%;
+        font-size: 2.5rem;
+    }
+
+    .time-value {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 70%;
+        font-size: 2.8rem;
     }
 }
