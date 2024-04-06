@@ -10,41 +10,19 @@
     .leaderboard-img{
         
         position: relative;
-        top: 0%;;
+        top: 0px;
 
         img {
             width: 100%;
-            min-width: 250px;
-            max-width: 350px;
+            max-width: 300px;
             aspect-ratio: 1.874;
         }
 
-        @media (min-height: 650px) {
-            top: 6%;
-        }
-
-
-        @media (max-width: 1000px) {
-            top: 6%;
-        }
-
-        @media (max-width: 900px) {
-            top: 8%;
-        }
-
-        @media (max-width: 800px) {
-            top: 12%;
-        }
-
-        @media (max-width: 600px) {
-            top: 16%;
-        }
-
-        @media (max-width: 500px) {
-            top: 18%;
-        }
+        // @media (max-width: 1000px){
+        //     height: 40%;
+        //     top: -30%;
+        // }
     }
-
     
     .leaderboard{
         position: relative;
