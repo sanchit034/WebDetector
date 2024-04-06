@@ -14,7 +14,7 @@ import { Profile } from "./components/lobby/Profile";
 import './App.css';
 
 function App() {
-  const deadline = new Date('2024-04-06T19:34:00');
+  const deadline = new Date('2024-04-06T19:40:00');
   const now = new Date();
   
   const timeDiff = deadline - now;
