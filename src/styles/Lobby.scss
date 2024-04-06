@@ -2,8 +2,11 @@
     background-image: url("../../public/assets/lobbyBG.png");
     background-size: cover;
     height: 100vh;
-    min-height: 650px;
     width: 100vw;
+
+    @media (max-width:500px) {
+        min-height: 900px;
+    }
 
     .content-container {
         @media (max-width: 650px){
