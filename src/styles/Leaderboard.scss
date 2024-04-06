@@ -40,20 +40,21 @@
         
         @media (max-width: 500px) {
             top: 18%;
+            
+            @media (min-height: 650px) {
+                top: 21%;
+            }
+            @media (min-height: 800px) {
+                top: 23%;
+            }
+            @media (min-height: 900px) {
+                top: 25%;
+            }
+            @media (min-height: 1080px) {
+                top: 27%;
+            }
         }
 
-        @media (min-height: 650px) {
-            top: 21%;
-        }
-        @media (min-height: 800px) {
-            top: 23%;
-        }
-        @media (min-height: 900px) {
-            top: 25%;
-        }
-        @media (min-height: 1080px) {
-            top: 27%;
-        }
     }
 
     
