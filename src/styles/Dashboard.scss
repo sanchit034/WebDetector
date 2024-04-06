@@ -206,3 +206,42 @@
         width: 100%;
     }
 }
+
+
+.counter-container {
+    width: 70%;
+    height: 70%;
+    background-color: rgba($color: #5F6FAA, $alpha: 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-family: "Irish Grover", system-ui;
+    border: 1px solid rgba($color: #999999, $alpha: 1);
+    //border-image: linear-gradient(to bottom right, rgba($color: #ffffff, $alpha: 1), rgba($color: #999999, $alpha: 1)) 1;
+    border-radius: 50px;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
+    
+    .counter-text {
+        font-size: 2.8rem;
+    }
+
+    .time-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 80%;
+        font-size: 2.5rem;
+    }
+
+    .time-value {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 70%;
+        font-size: 2.8rem;
+    }
+}
