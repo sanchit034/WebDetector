@@ -15,9 +15,9 @@
     border: 1px solid rgba($color: #999999, $alpha: 1);
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
 
-    @media (min-width: 650px) and (max-width: 1000px){
+    @media (min-width: 650px) and (max-width: 1100px){
         width: 65vw;
-        height: 50vh;
+        height: 45vh;
     }
 
     @media (max-width: 650px) {
@@ -55,7 +55,7 @@
 
 .input-field{
     margin: 1rem;
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
         justify-content: center;
     }
 }
@@ -85,7 +85,7 @@
     position: relative;
     left: 10px;
 
-    @media (min-width: 650px) and (max-width: 1000px) {
+    @media (min-width: 650px) and (max-width: 1100px) {
         justify-content: center;
         left: 0px;
     }
@@ -107,7 +107,7 @@
     border: 2.5px solid white;
     border-radius: 45px;
 
-    @media(min-width: 650px) and (max-width: 1000px)  {
+    @media(min-width: 650px) and (max-width: 1100px)  {
         justify-content: center;
     }
 

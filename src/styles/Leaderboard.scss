@@ -8,25 +8,23 @@
     color: white;
     
     .leaderboard-img{
-        
+        height: 40%;
+        width: 35%;
         position: relative;
-        top: 0px;
 
         img {
             width: 100%;
-            max-width: 300px;
-            aspect-ratio: 1.874;
+            height: 100%;
         }
 
-        @media (max-width: 1000px){
+        @media (max-width: 1100px){
             height: 40%;
-            top: -30%;
+            width: 70%;
         }
     }
     
     .leaderboard{
         position: relative;
-        top: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -35,12 +33,9 @@
         width: 80%;
         text-align: center;
 
-        @media (max-width: 1000px) {
+        @media (max-width: 1100px) {
+            width: 70%;
             height: 47%;
-        }
-
-        @media (max-width: 800px) {
-            top: -8%;
         }
 
         .winners {
@@ -110,21 +105,8 @@
         }
     }
 
-    @media (max-width: 1000px){
+    @media (max-width: 1100px){
         height: 78%;
         width: 80%;
-    }
-
-    @media (max-width: 650px) {
-        width: 100%;
-        zoom: 1.5;
-    }
-    
-    @media (max-width: 450px) {
-        zoom: 1.2;
-
-        .leaderboard-img {
-            top: -20%;
-        }
     }
 }
