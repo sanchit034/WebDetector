@@ -3,9 +3,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import "../../styles/Dashboard.scss";
 
-export const Dashboard = () => {
+export const Dashboard = ({ initialTime }) => {
   let answerRef = useRef();
-  const initialTime = 8;
   const [time, setTime] = useState(initialTime);
   const [hintTime, setHintTime] = useState(0);
   const [imageURL, setImageURL] = useState(''); 
@@ -101,6 +100,25 @@ export const Dashboard = () => {
 
   if (isLoading) {
     return <div></div>;
+  }
+
+  if(time > 0) {
+    return <div className='counter-container'>
+      <div className="counter-image"><img src="assets/counter.svg" alt="" /></div>
+      <div className="counter-text">Web Detector will start in</div>
+      <div className="time-text">
+        <div>Hours</div>
+        <div>Minutes</div>
+        <div>Seconds</div>
+      </div>
+      <div className="time-value">
+        <div>{Math.floor((time  / 3600))}</div>
+        <div>:</div>
+        <div>{(Math.floor(time / 60)) % 60}</div>
+        <div>:</div>
+        <div>{Math.floor(time % 60)}</div>
+      </div>
+    </div>
   }
 
   return (
