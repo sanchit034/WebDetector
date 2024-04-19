@@ -24,9 +24,8 @@ export const Dashboard = ({ initialTime }) => {
     const fetchData = async () => {
       if((localStorage.getItem('teamCode') ?? "" != "")) {
         try {
-          setImageURL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbmEd87LaA5t-mIDqQz5YTmheplGakiD0z062tLc59N2a2RkznfzifI07m1XsBUpvdsbM&usqp=CAU")
           const response = await axios.get('https://webdetector-backend.onrender.com/api/dashboard/contest/1')
-          //setImageURL(response.data.questionURL);
+          setImageURL(response.data.questionURL);
           setQuestionHint(response.data.questionHint);
           const updatedTime = new Date(response.data.lastUpdated);
           if(questionHint.length) {
@@ -105,15 +104,18 @@ export const Dashboard = ({ initialTime }) => {
 
   if(time > 0) {
     return <div className='counter-container'>
-      <div className="counter-image"><img src="assets/counter.svg" alt="" /></div>
+      <div className="counter-image"><img src="assets/question/counter.svg" alt="" /></div>
       <div className="counter-text">Web Detector will start in</div>
       <div className="time-text">
+        <div>Days</div>
         <div>Hours</div>
         <div>Minutes</div>
         <div>Seconds</div>
       </div>
       <div className="time-value">
-        <div>{Math.floor((time  / 3600))}</div>
+        <div>{Math.floor((time / 3600 / 24))}</div>
+        <div>:</div>
+        <div>{Math.floor(((time  / 3600) % 24))}</div>
         <div>:</div>
         <div>{(Math.floor(time / 60)) % 60}</div>
         <div>:</div>
@@ -137,12 +139,12 @@ export const Dashboard = ({ initialTime }) => {
           </div>
           <div className="answer-container">
             <form onSubmit={handleSubmit}>
-              <label htmlFor="answer" className='answer-item'>Test Completed</label>
-              <input type="text"  className="answer-item" id="your-answer" ref={answerRef} placeholder=" Test Completed"/>
+              <label htmlFor="answer" className='answer-item'>Your Answer</label>
+              <input type="text"  className="answer-item" id="your-answer" ref={answerRef} placeholder=" Your Answer"/>
             </form>
           </div>
           <div className="submit-container">
-            <button className="submit-btn" onClick={handleSubmit}></button>
+            <button className="submit-btn" onClick={handleSubmit}>Submit</button>
           </div>
           {questionHint.length < 3 && <div className="hint-timer-container">
             {hintAvailableText}<br/>{hintTime % 300} seconds

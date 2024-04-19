@@ -9,7 +9,8 @@ export const Sidebar = () => {
   const [tooltipVisibility, setTooltipVisibility] = useState({
     profile: false,
     lobby: false,
-    leaderboard: false
+    leaderboard: false,
+    practice: false
   });
 
   useEffect(() => {
@@ -32,7 +33,8 @@ export const Sidebar = () => {
     setTooltipVisibility({
       profile: currentPath.includes("profile"),
       lobby: currentPath.includes("lobby"),
-      leaderboard: currentPath.includes("leaderboard")
+      leaderboard: currentPath.includes("leaderboard"),
+      practice: currentPath.includes("practice"),
     });
   }, [pathname]);
 
@@ -87,6 +89,19 @@ export const Sidebar = () => {
               </a>
               {tooltipVisibility.leaderboard && <span className="tooltip">Leaderboard</span>}
           </div>
+
+          <div 
+            className={clsx(
+              "nav-item relative transition-all ease-in-out group-hover:scale-110 items-center justify-center b rounded-full p-2 dashboard flex flex-col",
+              tooltipVisibility.practice && "active"
+            )}
+          >
+              <a href="/lobby/practice">
+                  <img src="/assets/Img11.png" alt="Practice" className="images" />
+              </a>
+              {tooltipVisibility.practice && <span className="tooltip">Practice</span>}
+          </div>
+
           <button onClick={handleLogout}><img src="/assets/Img12.png" alt="Logout" className="images"/></button>
         </div>
       )}

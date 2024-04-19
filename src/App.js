@@ -9,12 +9,13 @@ import { Dashboard } from "./components/lobby/Dashboard";
 import { Leaderboard } from "./components/lobby/Leaderboard";
 import { Team } from "./components/lobby/Team";
 import { Profile } from "./components/lobby/Profile";
+import { Practice } from "./components/lobby/Practice";
 // import { Toaster } from 'react-hot-toast';
 // import { useSelector } from "react-redux";
 import './App.css';
 
 function App() {
-  const deadline = new Date('2024-04-06T21:50:00');
+  const deadline = new Date('2024-04-26T21:30:00');
   const now = new Date();
   
   const timeDiff = deadline - now;
@@ -29,7 +30,7 @@ function App() {
     initialTime = days * 24 * 3600 + hours * 3600 + minutes * 60 + remainingSeconds;
     console.log(`Time until April 6th, 9:30 PM: ${days} days, ${hours} hours, ${minutes} minutes, ${remainingSeconds} seconds`);
   }
-initialTime = 0;
+// initialTime = 0;
   return (
     <div className="App">
       <Router>
@@ -45,6 +46,7 @@ initialTime = 0;
               <Route path="leaderboard" element={<Leaderboard initialTime={initialTime} />} />
               <Route path="team" element={<Team />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="practice" element={<Practice />} />
             </Route>
         </Routes>
       </Router>

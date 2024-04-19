@@ -116,11 +116,11 @@ export const Login = () => {
             <div className="loginFormContainer">
               <div className="loginFormItem">
                 <label htmlFor="email" className='formItem'>Email Id</label>
-                <input type="email"  className="formItem" id="email" ref={emailRef} defaultValue={savedEmailId} placeholder=" Enter your email address"/>
+                <input type="email"  className="formItem" id="email" ref={emailRef} defaultValue={"demo@user.com"} placeholder=" Enter your email address"/>
               </div>
               <div className="loginFormItem">
               <label htmlFor="password" className="formItem">Password</label>
-              <input type="password" className="formItem" id="password" ref={passwordRef} defaultValue={savedPassword} placeholder=" Enter your password" />
+              <input type="password" className="formItem" id="password" ref={passwordRef} defaultValue={"default"} placeholder=" Enter your password" />
               </div>
             </div>
             {/* <div className="rememberMeContainer">

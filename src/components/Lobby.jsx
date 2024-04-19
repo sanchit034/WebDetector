@@ -86,6 +86,17 @@ const AnotherDiv = () => {
       <div className='line'></div>
 
       <div className='navbar-element'>
+        <a href="/lobby/practice">
+          <div className='container'>
+            <div className='imageContainer'><img src="/assets/Img11.png" alt="Leaderboard" className="images" /></div>
+            <div className='textContainer'>Practice</div>
+          </div>
+        </a>
+      </div>
+
+      <div className='line'></div>
+
+      <div className='navbar-element'>
       <button onClick={handleLogout}>
         <div className='container'>
           <div className='imageContainer'><img src="/assets/Img12.png" alt="Logout" className="images"/></div>
