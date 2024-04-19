@@ -18,7 +18,7 @@ export const Dashboard = ({ initialTime }) => {
   let timer;
   let hintTimer;
   const currentTime = new Date();
-
+ 
   useEffect(() => {
     // Fetch image URL from backend
     const fetchData = async () => {
@@ -104,15 +104,18 @@ export const Dashboard = ({ initialTime }) => {
 
   if(time > 0) {
     return <div className='counter-container'>
-      <div className="counter-image"><img src="assets/counter.svg" alt="" /></div>
+      <div className="counter-image"><img src="assets/question/counter.svg" alt="" /></div>
       <div className="counter-text">Web Detector will start in</div>
       <div className="time-text">
+        <div>Days</div>
         <div>Hours</div>
         <div>Minutes</div>
         <div>Seconds</div>
       </div>
       <div className="time-value">
-        <div>{Math.floor((time  / 3600))}</div>
+        <div>{Math.floor((time / 3600 / 24))}</div>
+        <div>:</div>
+        <div>{Math.floor(((time  / 3600) % 24))}</div>
         <div>:</div>
         <div>{(Math.floor(time / 60)) % 60}</div>
         <div>:</div>

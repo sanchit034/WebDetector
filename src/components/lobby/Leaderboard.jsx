@@ -28,7 +28,7 @@ export const Leaderboard = ({initialTime}) => {
         if (lastCallTime && timeDiff < 1500) {
           return;
         }
-        const response = await axios.get('https://webdetector-backend.onrender.com/api/winners');
+        const response = await axios.get('https://webdetector-backend.onrender.com/api/leaderboard/winners');
         console.log(response);
         const sortedEntries = response.data.sort((a, b) => {
           if (a.score ?? 0 !== b.score ?? 0) {
@@ -65,9 +65,6 @@ export const Leaderboard = ({initialTime}) => {
   if (isLoading) {
     return <div className=' text-white text-4xl'>Leaderboard is updating...</div>;
   }
-  return (
-    <Dashboard initialTime={initialTime}/>
-  )
 
   
 
@@ -80,14 +77,12 @@ export const Leaderboard = ({initialTime}) => {
             <div className='rank'>#</div>
             <div className='team-name'>Team Name</div>
             <div className='correct-answer'>Correct Answer</div>
-            <div className='time'>Time</div>
           </div>
           {[...Array(leaderboardEntries.length < 5 ? leaderboardEntries.length : 5).keys()].map((index) => (
             <div key={index}  className="card-content">
               <div className='rank'>{leaderboardEntries[index].maxProgress}</div>
               <div className='team-name'>{leaderboardEntries[index].teamName}</div>
               <div className='correct-answer'>{leaderboardEntries[index].score ?? "0"}</div>
-              <div className='time'>{leaderboardEntries[index].updatedAt}</div>
             </div>
           ))}
         </div>
@@ -97,7 +92,6 @@ export const Leaderboard = ({initialTime}) => {
             <div className='rank'>{selfEntry.maxProgress}</div>
             <div className='team-name'>{selfEntry.teamName}</div>
             <div className='correct-answer'>{selfEntry.score ?? "0"}</div>
-            <div className='time'>{selfEntry.updatedAt}</div>
           </div>
         </div>
       </div>
