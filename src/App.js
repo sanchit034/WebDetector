@@ -11,6 +11,7 @@ import { Team } from "./components/lobby/Team";
 import { Profile } from "./components/lobby/Profile";
 import { Practice } from "./components/lobby/Practice";
 // import { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast'
 // import { useSelector } from "react-redux";
 import './App.css';
 
@@ -49,6 +50,7 @@ function App() {
               <Route path="practice" element={<Practice />} />
             </Route>
         </Routes>
+        <Toaster/>
       </Router>
     </div>
   );
