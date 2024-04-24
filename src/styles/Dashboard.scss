@@ -228,6 +228,10 @@
         background-color: rgba($color: #5F6FAA, $alpha: 0.4);
         margin: 20px;
         border-radius: 35px;
+
+        p {
+            padding: 0px 5px;
+        }
     }
 
     @media (min-width: 650px) and (max-width: 1100px) {
