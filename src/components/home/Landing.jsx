@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useNavigate } from 'react-router-dom'; 
 import { Login } from './Login';
+import { About } from '../About';
 import "../../styles/Home.scss";
 
 export const Landing = ()=> {
@@ -17,6 +18,7 @@ export const Landing = ()=> {
   const loginAnimation = useAnimation();
   const aboutAnimation = useAnimation();
   const loginContentContainerAnimation = useAnimation();
+  const aboutContentContainerAnimation = useAnimation();
 
   function loginStatus() {
     if(localStorage.getItem('userId') ?? "" !== "") {
@@ -89,23 +91,24 @@ export const Landing = ()=> {
 
   const handleAboutClick = async () => {
     await Promise.all([
-      containerAnimation.start({left:'100%', opacity:1}, {duration: 0.5}),
-      aboutPageAnimation.start({left:'0%', opacity:1}, {duration: 0.5}),
+      aboutContentContainerAnimation.start({opacity:1}, {duration:0.001})
+    ]);
+    await Promise.all([
+      aboutContentContainerAnimation.start({left:'0%', opacity:1}, {duration:0.5}),
       initialAnimation.start({left:'120%', opacity:1}, {duration: 0.5}),
       textAnimation.start({left:'120%', opacity:1}, {duration: 0.5}),
       instaAnimation.start({left:'101%', opacity:1}, {duration: 0.5}),
       gmailAnimation.start({left:'101%', opacity:1}, {duration: 0.5}),
       loginAnimation.start({left:'104%', opacity:1}, {duration: 0.5}),
-      aboutAnimation.start({left:'181%', opacity:1}, {duration: 0.5})
+      aboutAnimation.start({left:'181%', opacity:1}, {duration: 0.5}),
     ]);
     await Promise.all([
-      containerAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
-      initialAnimation.start({left:'-80%', opacity:1}, {duration: 0.001}),
-      textAnimation.start({left:'-80%', opacity:1}, {duration: 0.001}),
-      instaAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
-      gmailAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
-      loginAnimation.start({left:'-100%', opacity:1}, {duration: 0.001}),
-      aboutAnimation.start({left:'-18%', opacity:1}, {duration: 0.001})
+      initialAnimation.start({left:'-80%', opacity:0}, {duration: 0.001}),
+      textAnimation.start({left:'-80%', opacity:0}, {duration: 0.001}),
+      instaAnimation.start({left:'-100%', opacity:0}, {duration: 0.001}),
+      gmailAnimation.start({left:'-100%', opacity:0}, {duration: 0.001}),
+      loginAnimation.start({left:'-100%', opacity:0}, {duration: 0.001}),
+      aboutAnimation.start({left:'-18%', opacity:0}, {duration: 0.001})
     ]);
   };
 
@@ -170,7 +173,7 @@ export const Landing = ()=> {
       <motion.img
         src="assets/loginIcon.svg"
         alt="Login Text"
-        style={{ width: '10.6%', aspectRatio:7, minWidth:'120px', left:'-4%', bottom:'5%', position: 'absolute', opacity: 0 }}
+        style={{ width: '10.6%', aspectRatio:5.4, minWidth:'120px', left:'1%', bottom:'5%', position: 'absolute', opacity: 0 }}
         animate={loginAnimation}
       />
       </button>
@@ -185,6 +188,10 @@ export const Landing = ()=> {
       {/*Login Page Items */}
       <motion.div style={{width:'80%', height:'70%', left:'-100%', top:'20%', position:'absolute',opacity: 0}} animate={loginContentContainerAnimation}>
         <Login/>
+      </motion.div>
+      {/* About Page Items */}
+      <motion.div style={{width:'100%', height:'75%', left:'-100%', top:'16%', position:'absolute',opacity: 0}} animate={aboutContentContainerAnimation}>
+        <About/>
       </motion.div>
     </div>
   );
